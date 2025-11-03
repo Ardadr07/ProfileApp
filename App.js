@@ -1,4 +1,3 @@
-// App.js
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileCard from './components/ProfileCard';
@@ -8,7 +7,6 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
         <Text style={styles.heading}>My Profile App</Text>
-
         <ProfileCard
           name="Arda Adar"
           title="Computer Engineering Student"
