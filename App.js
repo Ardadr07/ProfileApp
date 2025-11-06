@@ -6,14 +6,14 @@ import ProfileCard from './components/ProfileCard';
 const PROFILES = [
   {
     id: '1',
-    name: 'Arda Adar',
+    name: 'Arda A.',
     title: 'Computer Engineering Student',
     bio: 'React Native öğreniyorum. Girişim, yapay zeka ve kahve üçlüsüyle ilerliyorum.',
     avatarUri: 'https://i.pravatar.cc/300?img=12',
   },
   {
     id: '2',
-    name: 'Berk D.',
+    name: 'Sultan D.',
     title: 'Frontend Developer',
     bio: 'JS/TS seviyorum. Boş zamanlarda UI denemeleri yaparım.',
     avatarUri: 'https://i.pravatar.cc/300?img=32',
