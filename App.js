@@ -1,55 +1,34 @@
 // App.js
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileCard from './components/ProfileCard';
 
-const PROFILES = [
-  {
-    id: '1',
-    name: 'Arda A.',
-    title: 'Computer Engineering Student',
-    bio: 'React Native öğreniyorum. Girişim, yapay zeka ve kahve üçlüsüyle ilerliyorum.',
-    avatarUri: 'https://i.pravatar.cc/300?img=12',
-  },
-  {
-    id: '2',
-    name: 'Sultan D.',
-    title: 'Frontend Developer',
-    bio: 'JS/TS seviyorum. Boş zamanlarda UI denemeleri yaparım.',
-    avatarUri: 'https://i.pravatar.cc/300?img=32',
-  },
-  {
-    id: '3',
-    name: 'Aysun S.',
-    title: 'Mobile Enthusiast',
-    bio: 'Mobil performans ve basit tasarım meraklısı.',
-    avatarUri: 'https://i.pravatar.cc/300?img=45',
-  },
-];
-
 export default function App() {
-  const renderItem = ({ item }) => (
-    <ProfileCard
-      name={item.name}
-      title={item.title}
-      bio={item.bio}
-      avatarUri={item.avatarUri}
-    />
-  );
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inner}>
         <Text style={styles.heading}>My Profile App</Text>
 
-        <FlatList
-          data={PROFILES}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+        <ScrollView
           contentContainerStyle={styles.listContent}
           showsVerticalScrollIndicator={false}
-        />
+        >
+          <ProfileCard
+            name="Ada Lovelace"
+            role="Mathematician"
+            imageSource={require('./assets/ada.png')}
+          />
+          <ProfileCard
+            name="Grace Hopper"
+            role="Computer Scientist"
+            imageSource={require('./assets/grace.png')}
+          />
+          <ProfileCard
+            name="Hedy Lamarr"
+            role="Inventor"
+            imageSource={require('./assets/hedy.png')}
+          />
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -70,6 +49,6 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   listContent: {
-    paddingBottom: 24,
+    paddingBottom: 24, // listenin altına biraz boşluk
   },
 });
